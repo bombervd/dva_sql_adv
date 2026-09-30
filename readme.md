@@ -31,11 +31,7 @@ GROUP BY s.store_id, name
 #### Ответ:
 
 ```
-SELECT film.film_id, film.title, film.`length`
-FROM film 
-WHERE film.`length` > (SELECT AVG(film.`length`) FROM film)
-GROUP BY film.film_id
-;
+SELECT COUNT(mv.`length`)  FROM (SELECT film.`length` FROM film WHERE film.`length` > (SELECT AVG(film.`length`) FROM film ) GROUP BY film.film_id) as mv;
 ```
 <img src = "dva_sql_adv_t2.png" width = 100%>
 
