@@ -22,7 +22,7 @@ WHERE cus.cntcus > 300
 GROUP BY s.store_id, name
 ; 
 ```
-
+<img src = "dva_sql_adv_t1.png" width = 100%>
 
 ### Задание 2
 
@@ -37,7 +37,7 @@ WHERE film.`length` > (SELECT AVG(film.`length`) FROM film)
 GROUP BY film.film_id
 ;
 ```
-
+<img src = "dva_sql_adv_t2.png" width = 100%>
 
 ### Задание 3
 
@@ -51,5 +51,6 @@ SELECT tmmp1.`month`, tmmp2.`sum max`, tmmp1.cnt   FROM
 LEFT JOIN (SELECT MONTH(p.payment_date) AS month, SUM( p.amount) AS sum, COUNT(p.payment_id) AS cnt FROM payment p GROUP BY month) as tmmp1 ON tmmp1.sum = tmmp2.`sum max` 
 ;
 ```
+<img src = "dva_sql_adv_t3.png" width = 100%>
 
 
